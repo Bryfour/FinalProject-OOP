@@ -1,8 +1,43 @@
 package Final_ProjectPkg;
 
-public class SwingUi {
+import javax.swing.*;
+import java.awt.*;
+
+public class SwingUi extends JPanel {
+    private ImageFile file;// defaults to null
+    Image currentImage;
+    // store the img at the class lvl to avoid recreating 60/sec
+    public SwingUi(ImageFile file) {
+        setBackground(Color.LIGHT_GRAY);
+    }
+    public void setFile(ImageFile newFile){
+        this.file = newFile;
+        // sets the file in class to the setn file
+        if(file != null && file.file != null && !file.file.isEmpty()){
+            // get path from ImageFile
+            currentImage = new ImageIcon(file.file).getImage();
+        }
+        else{
+            currentImage = null;
+            // file set to null to avoid any errors
+        }
+        repaint();
+        // redraw screen / redisplay
+    }
 
 
+    public void paintComponent(Graphics g){
+        super.paintComponent(g); // required to clear scerren propeolry
+
+        // check for image. only works if image is not null
+        if(file != null){
+            // gte current path
+            // from awt, paramater is
+            // file name as param.
+            g.drawImage(currentImage,300,300,44,24, null);
+            // x, y, width, height, observer
+        }
+    }
 
 }
 

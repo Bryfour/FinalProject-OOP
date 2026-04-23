@@ -6,11 +6,14 @@ import java.awt.*;
 
 public class Main {
 
-
     String fileInput;
     // take input, use try except block from Exceptions to chek file. input through this class
     JpgImg jpg;
     PngImg png;// objects added to allow git push from inteliji.
+
+    static JFrame frame;
+    static SwingUi imagePanel;
+    // for futere theme style changes, can update entire ui faster.
 
     public static void main(String[] args){
 
@@ -20,6 +23,24 @@ public class Main {
         frame.setSize(600, 600); // width * height
         frame.setLocation(0,0); // x,y
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        frame.setLayout(new BorderLayout());
+
+        // panel for where buttons will be just starting out
+        JPanel topPanel = new JPanel();
+        topPanel.setBackground(Color.LIGHT_GRAY);
+        topPanel.add(new JLabel("Top, image below"));
+        // not set for image area yet,
+        // and dimension need to be set for white to show
+
+        imagePanel = new SwingUi(null);
+        imagePanel.setBackground(Color.WHITE);
+        // white bg
+
+        frame.add(topPanel, BorderLayout.NORTH);
+        frame.add(imagePanel, BorderLayout.CENTER);
+        // top and center will adjust everything later.
+
         frame.setContentPane(new SwingUi(null));
         // if there is no image...^
         frame.setVisible(true);
@@ -30,6 +51,21 @@ public class Main {
     }
 
 }
+
+/*
+seperate theme window:
+public static void ChangeTheme(String themeName){
+    try{
+    if (themeName.equals("dark)){
+        UIManager.setLookAndFeel("javaz.swing.platf.metal.MetalLookAndFeel");
+        SwingUtilities.updateComponentTreeUI(frame);
+        //libraries
+    }
+    catch (Exception exc){
+        exc.printStackTrace();
+    }
+
+ */
 
 /*
 

@@ -11,6 +11,9 @@ public abstract class ImageFile implements Display{
         // current file
 
     }
+    public abstract void loadRawMedia();
+        //forces png n jpg child classes to handle their own specific loading logic
+
     // just for now, so i don't have issues, file wil be set to a default path,
     public void defaultPath(){
         this.file = "";
@@ -49,11 +52,14 @@ public abstract class ImageFile implements Display{
 
     }
 
+    public void validateFileExt(String path){
+        //takes string path
+        //filtering logic to reject non image files instantly etc
+        // to be updated
 
+    }
 
 }
-
-
 
 /*
 "Final_ProjectPkg.ImageFile" abstract class purpose
@@ -64,19 +70,17 @@ possibly add / consider logging infrastructure for future expansion
 base class for all media files
 houses shared filtering logic n basic file validation before heavy loading
 holds common metadata fields
-method validateFileExtension
-takes string path
-filtering logic to reject non image files instantly etc
+
 method applyZoomFilter
-takes integer scale
-base logic for resizing the buffered image using graphics2d
+takes int scale (formated as percentage
+base logic for resizing the buffered image using graphics2d or something else...
+
 method extractBaseMetadata
 grabs file size n path
 reads from text file n returns string for the text display area
 throws exceptions passes to exceptions class (if a file is missing etc)
+
 method getFilePath
 simple getter for the path string
-abstract method loadRawMedia
-forces png n jpg child classes to handle their own specific loading logic
 
  */

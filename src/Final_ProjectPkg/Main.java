@@ -53,21 +53,6 @@ public class Main {
 }
 
 /*
-seperate theme window:
-public static void ChangeTheme(String themeName){
-    try{
-    if (themeName.equals("dark)){
-        UIManager.setLookAndFeel("javaz.swing.platf.metal.MetalLookAndFeel");
-        SwingUtilities.updateComponentTreeUI(frame);
-        //libraries
-    }
-    catch (Exception exc){
-        exc.printStackTrace();
-    }
-
- */
-
-/*
 
 must have requirements:
 Obviousily java
@@ -90,27 +75,48 @@ Ability to read or write to a file.
  */
 
 /*
-note: renamed to Ui Final_ProjectPkg.Main or similar later for future video support
+note: changes appld for future video support
 main entry point for the program
-connects swingui n imagefile child classes (classes passing objects etc)
+connects swingui n imagefile, child classes (classes passing objects etc)
 contains action listener n button logic n try except blocks for invalid files
+
 method main
 sets swing look n feel
 instantiates swingui n imageclassmain
+
 method handleOpenButton
 action listener attached to import button
 triggers jfilechooser
 try except block catches invalid files n triggers ui pop ups
+
 method loadMediaToDisplay
 takes imagefile object as parameter
 casts to display interface
 calls render to panel on right side frame
+
 method updateMetadataText
 reads from text file using passed object
 displays elements from it in the left frame text area
-method triggerSurpriseElement
-uses a random swing feature
-maybe custom draggable ghost image or animated cursor when hovering main display etc
+
+method triggerSurpriseElement-
+--will be sliderfor transparency prob-- png will applies this
+
 */
+
+
+/*
+seperate theme window:
+public static void ChangeTheme(String themeName){
+    try{
+    if (themeName.equals("dark)){
+        UIManager.setLookAndFeel("javaz.swing.platf.metal.MetalLookAndFeel");
+        SwingUtilities.updateComponentTreeUI(frame);
+        //libraries
+    }
+    catch (Exception exc){
+        exc.printStackTrace();
+    }
+
+ */
 
 

@@ -6,7 +6,30 @@ public class JpgImg extends ImageFile{
         super(file);
     }
 
+    @Override
+    public void loadRawMedia() {
 
+    }
+
+    @Override
+    public void renderToPanel() {
+        //
+    }
+
+    @Override
+    public void zoomIn() {
+
+    }
+
+    @Override
+    public void zoomOut() {
+
+    }
+
+    @Override
+    public void resetImg() {
+
+    }
 }
 // other stuff on how to expand / display png anything specific to jpg etc
 

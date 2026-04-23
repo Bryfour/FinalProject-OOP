@@ -11,6 +11,10 @@ public abstract class ImageFile implements Display{
         // current file
 
     }
+    // just for now, so i don't have issues, file wil be set to a default path,
+    public void defaultPath(){
+        this.file = "";
+    }
 
     // create an array for the most recent 10 files opened.
     //Array<String>[] recentFiles= new <String> [];

@@ -40,6 +40,8 @@ public class Main {
         frame.add(topPanel, BorderLayout.NORTH);
         frame.add(imagePanel, BorderLayout.CENTER);
         // top and center will adjust everything later.
+        // border layout
+        //https://docs.oracle.com/javase/8/docs/api/index.html?javax%2Fswing%2Fpackage-summary.html=
 
         frame.setContentPane(new SwingUi(null));
         // if there is no image...^
@@ -47,6 +49,18 @@ public class Main {
 
         // just call the swing ui object with .setFile(selectedFile);
         // obviousily once this get inplemented.
+
+        // file dialog
+        //https://docs.oracle.com/javase/8/docs/api/java/awt/FileDialog.html
+
+        // button for import/ open file
+        //https://docs.oracle.com/javase/8/docs/api/index.html?javax%2Fswing%2Fpackage-summary.html=
+
+        // img class that allows for any image upscaling etc
+        //https://docs.oracle.com/javase/8/docs/api/java/awt/Image.html
+
+        // left pane (JTabbedPane)
+        //https://docs.oracle.com/javase/8/docs/api/index.html?java/awt/ImageCapabilities.html
 
     }
 

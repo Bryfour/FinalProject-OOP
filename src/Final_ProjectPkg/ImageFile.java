@@ -11,12 +11,18 @@ public abstract class ImageFile implements Display{
         // current file
 
     }
+    // if needed,
+    public String getFilePath(String path){
+        return path;
+    }
     public abstract void loadRawMedia();
         //forces png n jpg child classes to handle their own specific loading logic
+        // java io check main for links
 
     // just for now, so i don't have issues, file wil be set to a default path,
-    public void defaultPath(){
-        this.file = "";
+    public String defaultPath(){
+        this.file = "img.png";
+        return this.file;
     }
 
     // create an array for the most recent 10 files opened.
@@ -75,12 +81,11 @@ method applyZoomFilter
 takes int scale (formated as percentage
 base logic for resizing the buffered image using graphics2d or something else...
 
-method extractBaseMetadata
-grabs file size n path
+method extrBaseMetaData
+
+grabs file size n path / uses path getter
 reads from text file n returns string for the text display area
 throws exceptions passes to exceptions class (if a file is missing etc)
-
-method getFilePath
-simple getter for the path string
+notes what metaData is expected, but missing
 
  */

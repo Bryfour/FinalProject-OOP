@@ -1,13 +1,33 @@
 package Final_ProjectPkg;
 
+import javax.swing.*;
+import java.awt.*;
+// star imports everything froma  given library, this CAN cause issues in the suture.
+
 public class Main {
 
 
     String fileInput;
     // take input, use try except block from Exceptions to chek file. input through this class
     JpgImg jpg;
-    PngImg png;
+    PngImg png;// objects added to allow git push from inteliji.
 
+    public static void main(String[] args){
+
+        // name of the entire window inside wich buttons etc will be
+        JFrame frame = new JFrame("Final_ProjectPkg.Main Window");
+
+        frame.setSize(600, 600); // width * height
+        frame.setLocation(0,0); // x,y
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setContentPane(new SwingUi(null));
+        // if there is no image...^
+        frame.setVisible(true);
+
+        // just call the swing ui object with .setFile(selectedFile);
+        // obviousily once this get inplemented.
+
+    }
 
 }
 

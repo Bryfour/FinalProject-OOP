@@ -1,3 +1,5 @@
+package Final_ProjectPkg;
+
 public class SwingUi {
 
 
@@ -7,7 +9,7 @@ public class SwingUi {
 // maybe rename to ui manager
 
 /*
-"SwingUi" controls things like borders / default borders etc
+"Final_ProjectPkg.SwingUi" controls things like borders / default borders etc
 groups different ui element sections like by frame for faster implementation
 makes it easy and fast to update the ui later on
 default setups for fast ui building

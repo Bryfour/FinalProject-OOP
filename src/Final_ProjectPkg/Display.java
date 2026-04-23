@@ -1,3 +1,5 @@
+package Final_ProjectPkg;
+
 public interface Display {
 
 
@@ -6,7 +8,7 @@ public interface Display {
 
 /*
 
-"Display" interface purpose
+"Final_ProjectPkg.Display" interface purpose
 standardizes how any media (images now, video later) interacts with the ui
 decouples actual file data from java swing components
 forces child classes to implement zoom in / zoom out tools etc

@@ -1,3 +1,5 @@
+package Final_ProjectPkg;
+
 public class JpgImg extends ImageFile{
 
     public JpgImg(String file) {
@@ -10,10 +12,10 @@ public class JpgImg extends ImageFile{
 
 /*
 
-"JpgImg" child class purpose
+"Final_ProjectPkg.JpgImg" child class purpose
 handles jpeg specific loading
 focuses on rgb color space since jpgs have no transparency
-constructor JpgImg
+constructor Final_ProjectPkg.JpgImg
 takes string path parameter as argument
 calls parent constructor
 runs jpg specific validation etc

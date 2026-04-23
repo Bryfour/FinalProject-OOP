@@ -1,3 +1,5 @@
+package Final_ProjectPkg;
+
 public class PngImg extends ImageFile{
     public PngImg(String file) {
         super(file);
@@ -10,10 +12,10 @@ public class PngImg extends ImageFile{
 
 
 /*
-PngImg" child class purpose
+"Final_ProjectPkg.PngImg" child class purpose
 handles png specific loading
 focuses on alpha transparency channels
-constructor PngImg
+constructor Final_ProjectPkg.PngImg
 takes string path parameter
 calls parent constructor
 runs png specific validation etc

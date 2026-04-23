@@ -1,9 +1,13 @@
+package Final_ProjectPkg;
+
 public class Main {
+
 
     String fileInput;
     // take input, use try except block from Exceptions to chek file. input through this class
     JpgImg jpg;
     PngImg png;
+
 
 }
 
@@ -30,7 +34,7 @@ Ability to read or write to a file.
  */
 
 /*
-note: renamed to Ui Main or similar later for future video support
+note: renamed to Ui Final_ProjectPkg.Main or similar later for future video support
 main entry point for the program
 connects swingui n imagefile child classes (classes passing objects etc)
 contains action listener n button logic n try except blocks for invalid files

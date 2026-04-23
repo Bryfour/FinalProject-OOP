@@ -1,3 +1,5 @@
+package Final_ProjectPkg;
+
 public abstract class ImageFile implements Display{
 //import java.util.
 
@@ -50,7 +52,7 @@ public abstract class ImageFile implements Display{
 
 
 /*
-"ImageFile" abstract class purpose
+"Final_ProjectPkg.ImageFile" abstract class purpose
 handles read/write to file requirements
 reads from img file n parses elements from text file to display
 writing to file for logs or saving metadata

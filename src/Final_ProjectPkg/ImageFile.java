@@ -66,6 +66,10 @@ public abstract class ImageFile implements Display{
     }
 
 }
+// LATER MAYBE NEVER
+// add functionality that allows user to crop copy whatever size of patch
+// and paste onto main img to remove watermarks etc. just an overlay,
+// would need to allow overwriting of img and save as dropdown.
 
 /*
 "Final_ProjectPkg.ImageFile" abstract class purpose
@@ -87,5 +91,6 @@ grabs file size n path / uses path getter
 reads from text file n returns string for the text display area
 throws exceptions passes to exceptions class (if a file is missing etc)
 notes what metaData is expected, but missing
+displayes data, and missing data. prob w toString
 
  */

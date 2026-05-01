@@ -16,11 +16,36 @@ public class Main{
     // for futere theme style changes, can update entire ui faster.
 
     public static void main(String[] args){
+        SwingUi Q1 = new SwingUi();
+        SwingUi Q2 = new SwingUi();
+
+        // name of the entire window inside wich buttons etc will be
+        JFrame frame = new JFrame("Final_ProjectPkg.Main Window");
+
+        frame.setSize(600, 500); // width * height
+        frame.setLocation(0,0); // x,y
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        frame.setLayout(new BorderLayout());
+        frame.setBackground(Color.WHITE);
+        // white bg
+
+        // FIXME adding a window to a container. ERROR
+        // main window logic here ONLY everything else oes SwingUi class
+        //frame.add(Q1, BorderLayout.NORTH);
+        //frame.add( Q1, BorderLayout.CENTER);
+        // top and center will adjust everything later.
+        // border layout
+
+        frame.setVisible(true);
+
+        // run it in main
         SwingUtilities.invokeLater(SwingUi :: new);
 
     }
 
 }
+
 /*
 create JFrame/ window
     create jpsplit panes, split screen into 4 and size:

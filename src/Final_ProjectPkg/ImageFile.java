@@ -1,9 +1,12 @@
 package Final_ProjectPkg;
 
+import javax.swing.*;
+import java.awt.*;
+
 public abstract class ImageFile implements Display{
 //import java.util.
 
-    String file;
+    private String file;
 
     public ImageFile(String file){
         this.file = file;
@@ -12,8 +15,11 @@ public abstract class ImageFile implements Display{
 
     }
     // if needed,
-    public String getFilePath(String path){
-        return path;
+    public String getFilePath(){
+        return file;
+    }
+    public void setFilePath(String path){
+        file = path;
     }
     public abstract void loadRawMedia();
         //forces png n jpg child classes to handle their own specific loading logic
@@ -33,10 +39,12 @@ public abstract class ImageFile implements Display{
         return recentFiles;
     }
 
-    public void importFile(String path){
-        System.out.println("Try file:" + file + " for type");
+    public void importFile(){
 
-        System.out.println("File " + file + " is not an Image or Video file path");
+        if(!validateFileExt()){
+            System.out.println("File " + file + " is not an Image or Video file path");
+            //System.out.println("Try file:" + file + " for type");
+        }
         // array for loop cycles and adds new file names/ paths
         // then cycles back to the last one (1->10) when the tenth file is added it starts from the beginning,
         // except it replaces files instead
@@ -58,11 +66,44 @@ public abstract class ImageFile implements Display{
 
     }
 
-    public void validateFileExt(String path){
-        //takes string path
+    public boolean validateFileExt(){
+        String path = getFilePath();
+        //takes string path. maybe use getter? instead?
         //filtering logic to reject non image files instantly etc
-        // to be updated
+        String ext = path.substring(path.indexOf("." + 1));
+        // finds the last "." and reads starting the next one
 
+        if("png".equalsIgnoreCase(ext) || "jpg".equalsIgnoreCase(ext)){
+            System.out.println("Val file Ext;ImageFileClass TRUE");
+            return true;
+        }
+        System.out.println("Val file Ext; ImageFileClass FALSE");
+
+        return false;
+    }
+
+    public boolean validSize(){
+        // checks image for image size before passing for display
+        // 10 * 10 px ?
+        int minSize = 10; // minimum 10 pix max 10k
+        int maxSize = 10000; // hopefully this works...
+        if(validateFileExt()){
+            // validate file and then check size of img, determine if it can / should be displayed
+            // stuff from tutorial
+            ImageIcon icon = new ImageIcon(getFilePath());
+            int width = icon.getIconWidth();
+            int height = icon.getIconHeight();
+
+            // validate the actual size
+            if(width > minSize && height > minSize && width <= maxSize && height <=maxSize){
+                System.out.println("Can be displ; ValidSize; ImageFile");
+                return true;
+            }
+        }
+
+        System.out.println("Something broke.. File not supported ? ");
+
+        return false;
     }
 
 }

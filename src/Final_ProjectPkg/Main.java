@@ -1,70 +1,51 @@
 package Final_ProjectPkg;
 
 import javax.swing.*;
+
 import java.awt.*;
 // star imports everything froma  given library, this CAN cause issues in the suture.
 
-public class Main {
+public class Main{
 
     String fileInput;
     // take input, use try except block from Exceptions to chek file. input through this class
     JpgImg jpg;
     PngImg png;// objects added to allow git push from inteliji.
 
-    static JFrame frame;
     static SwingUi imagePanel;
     // for futere theme style changes, can update entire ui faster.
 
     public static void main(String[] args){
-
-        // name of the entire window inside wich buttons etc will be
-        JFrame frame = new JFrame("Final_ProjectPkg.Main Window");
-
-        frame.setSize(600, 600); // width * height
-        frame.setLocation(0,0); // x,y
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        frame.setLayout(new BorderLayout());
-
-        // panel for where buttons will be just starting out
-        JPanel topPanel = new JPanel();
-        topPanel.setBackground(Color.LIGHT_GRAY);
-        topPanel.add(new JLabel("Top, image below"));
-        // not set for image area yet,
-        // and dimension need to be set for white to show
-
-        imagePanel = new SwingUi(null);
-        imagePanel.setBackground(Color.WHITE);
-        // white bg
-
-        frame.add(topPanel, BorderLayout.NORTH);
-        frame.add(imagePanel, BorderLayout.CENTER);
-        // top and center will adjust everything later.
-        // border layout
-        //https://docs.oracle.com/javase/8/docs/api/index.html?javax%2Fswing%2Fpackage-summary.html=
-
-        frame.setContentPane(new SwingUi(null));
-        // if there is no image...^
-        frame.setVisible(true);
-
-        // just call the swing ui object with .setFile(selectedFile);
-        // obviousily once this get inplemented.
-
-        // file dialog
-        //https://docs.oracle.com/javase/8/docs/api/java/awt/FileDialog.html
-
-        // button for import/ open file
-        //https://docs.oracle.com/javase/8/docs/api/index.html?javax%2Fswing%2Fpackage-summary.html=
-
-        // img class that allows for any image upscaling etc
-        //https://docs.oracle.com/javase/8/docs/api/java/awt/Image.html
-
-        // left pane (JTabbedPane)
-        //https://docs.oracle.com/javase/8/docs/api/index.html?java/awt/ImageCapabilities.html
+        SwingUtilities.invokeLater(SwingUi :: new);
 
     }
 
 }
+/*
+create JFrame/ window
+    create jpsplit panes, split screen into 4 and size:
+        Q1 left top bottom aprox 100 px wide; locked at about 150, max
+        Q3,Q4 bottom aprox 100 px Height
+        Q2 main img view right top takes up about 2/3 Space x and y
+
+    border is 3px on ALL parts. maximize space usage in ui.
+    bg is dark grey
+
+
+    Q1 contains 3 tabs from JTabbedPanes
+    Q2 contains 2 panes, one for img viewing
+    Q3,Q4 currnently empty
+
+    button inside image tabe one
+        tab names-> Image, V, Modify
+
+
+
+    QUADRANTS for easy understanding:
+ Q1-----Q2
+ |---|---|
+ Q3-----Q4
+ */
 
 /*
 

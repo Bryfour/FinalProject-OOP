@@ -5,46 +5,47 @@ import javax.swing.*;
 import java.awt.*;
 // star imports everything froma  given library, this CAN cause issues in the suture.
 
-public class Main{
+public class Main extends JFrame{
 
     String fileInput;
     // take input, use try except block from Exceptions to chek file. input through this class
     JpgImg jpg;
     PngImg png;// objects added to allow git push from inteliji.
 
-    static SwingUi imagePanel;
+    //static SwingUi imagePanel;
     // for futere theme style changes, can update entire ui faster.
 
     public static void main(String[] args){
-        SwingUi Q1 = new SwingUi();
-        SwingUi Q2 = new SwingUi();
 
-        // name of the entire window inside wich buttons etc will be
-        JFrame frame = new JFrame("Final_ProjectPkg.Main Window");
+        JFrame window = new JFrame("Final_ProjectPkg.Main Window");
 
-        frame.setSize(600, 500); // width * height
-        frame.setLocation(0,0); // x,y
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        window.setSize(600, 500); // width * height
+        window.setLocation(0,0); // x,y
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        frame.setLayout(new BorderLayout());
-        frame.setBackground(Color.WHITE);
-        // white bg
+        window.setLayout(new BorderLayout());
+        window.setBackground(Color.GRAY);
+
+
+        SwingUi imagePanel = new SwingUi();
+        window.add(imagePanel);
+
+        window.setVisible(true);
+                // name of the entire window inside wich buttons etc will be
+        // run it in main
+        SwingUtilities.invokeLater(SwingUi :: new);
 
         // FIXME adding a window to a container. ERROR
         // main window logic here ONLY everything else oes SwingUi class
-        //frame.add(Q1, BorderLayout.NORTH);
-        //frame.add( Q1, BorderLayout.CENTER);
+        //window.add(Q1, BorderLayout.NORTH);
+        //window.add( Q1, BorderLayout.CENTER);
         // top and center will adjust everything later.
         // border layout
-
-        frame.setVisible(true);
-
-        // run it in main
-        SwingUtilities.invokeLater(SwingUi :: new);
 
     }
 
 }
+
 
 /*
 create JFrame/ window

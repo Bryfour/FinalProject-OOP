@@ -3,10 +3,52 @@ package Final_ProjectPkg;
 import javax.swing.*;
 import java.awt.*;
 
+// libs for metadata/ disp of img (BUILT IN TO JAVA)
+import javax.imageio.ImageIO;
+// read with this. tools kind of for working w the img
+import javax.imageio.ImageReader;
+// reads/ provides image metadata specifics
+import javax.imageio.stream.ImageInputStream;
+// interface fr the raw img reading
+
+// maybe in the future even read exif data.
+// for something like determining focal length etc to do math on an image, say for computer vidosn
+
 public abstract class ImageFile implements Display{
 //import java.util.
 
     private String file;
+    private JLabel[] labelArray;
+/*
+    // add meta data labels etc vars for that because why not
+    private String fileName;
+    private String pixAmount;
+    private String dimensionX,dimensionY;
+    private String size;// size as in kb, mb, or... if its a thing gb
+    private String created; // date, time etc. include logic that checks and does/not displ if some not found
+    // data, time etc.
+*/
+
+
+    //FIXME WARNING this is mainly for bry bry
+    // probably a good place to put try except blocks.
+    // for data that can't be pulled from the img
+
+    public void dispMetaData(int dataPoints){
+        // meta data is basic information about an img /  video or file,
+            //contains creation, access dates and times, path etc
+
+        for(int i = 0; i >= dataPoints;){
+            // create a jbale for each data point, assuming that there may be missing info.
+            // ok, actually create an array that if full throws exception,
+            // and it gets cauthg.
+            // labelArray is the list
+            //labelArray.add(dataPoints + i);
+            System.out.println(i + " label Number " + " datapint: " + dataPoints);
+
+        }
+
+    }
 
     public ImageFile(String file){
         this.file = file;
@@ -14,6 +56,9 @@ public abstract class ImageFile implements Display{
         // current file
 
     }
+
+    //FIXME with the new libraries for metadata,
+    // this might be totally irevalant soon.
     // if needed,
     public String getFilePath(){
         return file;

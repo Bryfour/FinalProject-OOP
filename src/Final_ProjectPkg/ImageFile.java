@@ -11,6 +11,9 @@ import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 // interface fr the raw img reading
 
+// how to load an image in java this will work with the pane
+// https://www.youtube.com/watch?v=gp9H0WLxKgU
+
 // maybe in the future even read exif data.
 // for something like determining focal length etc to do math on an image, say for computer vidosn
 
@@ -28,6 +31,8 @@ public abstract class ImageFile implements Display{
     private String created; // date, time etc. include logic that checks and does/not displ if some not found
     // data, time etc.
 */
+
+
 
 
     //FIXME WARNING this is mainly for bry bry

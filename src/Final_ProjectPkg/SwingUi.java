@@ -9,16 +9,119 @@ public class SwingUi extends JPanel {
 
     // store the img at the class lvl to avoid recreating 60/sec
     public SwingUi(ImageFile file) {
-        setBackground(Color.GRAY);
     }
+
+    public SwingUi() {
+        setLayout(new BorderLayout());
+
+        JPanel Q1 = new JPanel(new BorderLayout());
+        Q1.setBackground(Color.RED);
+        Q1.add(new JLabel(("QUADRANT 1;" + "\n LEFT SIDE W IMG TOOLS N BUTTONS?")));
+        Q1.setMinimumSize(new Dimension(10, 10));
+        // min size to prevent label breaking resize
+
+        //FIXME label is brokn. figure out for later
+
+        //set up sizing
+        //Q1.setMinimumSize(new Dimension(50,0));
+
+        JPanel Q2 = new JPanel(new BorderLayout());
+        Q2.setBackground(Color.GREEN);
+        Q2.add(new JLabel("QUADRANT 2; IMAGE GOES HERE"));
+
+        JPanel Q3 = new JPanel(new BorderLayout());
+        Q3.setBackground(Color.BLACK);
+        Q3.add(new JLabel("QUADRANT 3; STUFF"));
+        Q3.setMinimumSize(new Dimension(10, 10));
+
+        JPanel Q4 = new JPanel(new BorderLayout());
+        Q4.setBackground(Color.CYAN);
+        Q4.add(new JLabel("QUADRANT 4; " + "\n I GUESS Error Stuff"));
+
+        /*
+        JSplitPane lPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT,Q1,Q3);
+        //lPane.setResizeWeight(.75);
+        //lPane.setDividerLocation(.25);
+
+        JSplitPane rPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT,Q2,Q4);
+        //rPane.setResizeWeight(.75);// only when the window is resized
+        //rPane.setDividerLocation(.50);
+
+        //  combine
+        JSplitPane bottomPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, lPane, rPane);
+        bottomPane.setDividerLocation(.8);
+
+        add(bottomPane, BorderLayout.CENTER);
+*/      // possible to use Jx multisplitplane
+
+        // split the quadrants up like the way i want to make them look
+        // more like order, Q1, Q2
+        JSplitPane topQ = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, Q1, Q2);
+        //topQ.setResizeWeight(.75);
+        topQ.setDividerLocation(.75);
+
+        JSplitPane bottomQ = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, Q3, Q4);
+
+        //FIXME trying to make the H and V splits to line up. think i will use percentage for sizing ere
+
+        // combine 4 quads together w vertical split
+        JSplitPane leftRQuads = new JSplitPane(JSplitPane.VERTICAL_SPLIT, topQ, bottomQ);
+        leftRQuads.setResizeWeight(.75);// percentage of space take up
+        // use add w/o window onject bc it will just be glued on
+
+        // add everything to win hree
+        add(leftRQuads, BorderLayout.CENTER);
+
+
+        // panel for where buttons will be just starting out
+        //JPanel Q2 = new JPanel();
+        //Q2.setBackground(Color.LIGHT_GRAY);
+        // not set for image area yet,
+        // and dimension need to be set for white to show
+
+        //JPanel Q3 = new JPanel();
+        //JPanel Q4 = new JPanel();
+        //JSplitPane quad = new JSplitPane();
+        // split into quad
+
+        //setBackground(Color.GRAY);
+
+        //https://docs.oracle.com/javase/8/docs/api/index.html?javax%2Fswing%2Fpackage-summary.html=
+    }
+}
+
+//FIXME Margins are too Fat,
+    // 25% Left side and 20% bottom margins fine, right top, Q2) is main image viewing
+    // prob about 150 and 200px minimum
+
+        //FIXME
+        // supposed to render Img, but causes error.
+        // "Adding a window to a container"
+        //frame.setContentPane(new SwingUi(null));
+        // if there is no image...^
+
+        // just call the swing ui object with .setFile(selectedFile);
+        // obviousily once this get inplemented.
+
+        // file dialog
+        //https://docs.oracle.com/javase/8/docs/api/java/awt/FileDialog.html
+
+        // button for import/ open file
+        //https://docs.oracle.com/javase/8/docs/api/index.html?javax%2Fswing%2Fpackage-summary.html=
+
+        // img class that allows for any image upscaling etc
+        //https://docs.oracle.com/javase/8/docs/api/java/awt/Image.html
+
+        // left pane (JTabbedPane)
+        //https://docs.oracle.com/javase/8/docs/api/index.html?java/awt/ImageCapabilities.html
+
+
 
     // currently this panel is showing up only...^^
 
-    public void mainFrame(){
-        //initializes jframe
-        //sets borderlayout etc
-    }
-
+    //FIXME
+    // Image rendering here, tutorial was for icon, may just get delted.
+    /*
     public void setFile(ImageFile newFile){
         this.file = newFile;
         // sets the file in class to the setn file
@@ -40,7 +143,8 @@ public class SwingUi extends JPanel {
 // tutorial on yt: "how to put an image on to a Jpanel/JFrame in Java Swing"
 
     public void paintComponent(Graphics g){
-        super.paintComponent(g); // required to clear scerren propeolry
+        //super.paintComponent(g); // required to clear scerren propeolry
+        ImageIcon image = new ImageIcon();
 
         // check for image. only works if image is not null
         if(file != null){
@@ -51,8 +155,8 @@ public class SwingUi extends JPanel {
             // x, y, width, height, observer
         }
     }
+    */
 
-}
 
 // maybe rename to ui manager
 

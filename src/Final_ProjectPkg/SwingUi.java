@@ -11,6 +11,7 @@ public class SwingUi extends JPanel {
     public SwingUi(ImageFile file) {
     }
 
+// CONSTRUCTOR
     public SwingUi() {
         setLayout(new BorderLayout());
 

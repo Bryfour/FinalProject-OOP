@@ -91,6 +91,35 @@ public abstract class ImageFile implements Display{
 
     public void importFile(){
 
+        // not functional yet, working on reading img from the String.
+        // 5/13
+        // team pivoted due to JFileChooser displaying img and functional transparency on seeming any img...
+        // using the img var for reading the string into path, and getting metadata / exif data
+
+        String img;
+        //img = ImageIO.read(file.getFilePath());
+
+        /*
+        try {
+            img {
+                // try to open the path
+            }
+        catch(IOException e){
+                e.printStackTrace(System.out);
+            }
+            if (img != null) {
+                display(img);
+            }
+        }
+
+    public void display(BufferedImage img){
+            System.out.println(" Displaying image.");
+            }
+    */
+
+
+
+
         if(!validateFileExt()){
             System.out.println("File " + file + " is not an Image or Video file path");
             //System.out.println("Try file:" + file + " for type");

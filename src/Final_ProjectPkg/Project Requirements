@@ -1,0 +1,24 @@
+/*
+
+must have requirements:
+Obviousily java
+Polymorphism
+Inheritance
+Abstract class
+Interface
+Constructor
+Exceptions
+
+Use JavaSwing or Java Fx-- USE JAVA FX
+Contain an action listner + Button
+Text display
+Reading from a text file and displaying elements from it
+Labels and UI pop ups
+Should be an interactable UI
+A surprise element that uses any feature from JavaSwing or JavaFx
+Classes that pass other classes as objects among each other in a multifile environment
+Ability to read or write to a file.
+ */
+
+Side note, Definitely could have put more thought about actually having normal concrete classes for certain
+    things in jpg, and png. would have def moved.

@@ -13,12 +13,12 @@ public class JpgImg extends ImageFile{
 
     @Override
     public void renderToPanel() {
-        //
+        // render to Quad 2 but could be controlled by JTabbed pane in Q1...
     }
 
     @Override
     public void zoomIn() {
-
+    // zoom in out could def be moved just as concrete in abstract class as well as reset image, rename to clear image
     }
 
     @Override
@@ -45,11 +45,11 @@ runs jpg specific validation etc
 
 
 method checkColorSpace
-verifies if image is cmyk or rgb
+verifies if image is colors cmyk or rgb
 prevents weird color tinting when displaying in swing etc
 
 method stripExifData
-removes camera metadata tags for privacy
+removes camera metadata tags for privacy / decreases file size over large amts of files.
 returns cleaned buffered image
 
 method estimateCompression
